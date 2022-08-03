@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <div>
+        <label>First Name:* </label>
+        <input type="text" name="first_name">
+    </div>
+    <br>
+    <div>
+        <label>Last Name:* </label>
+        <input type="text" name="last_name">
+    </div>
+    <br>
+    <div>
+        <label>Email Address:* </label>
+        <input type="text" name="email">
+    </div>
+    <br>
+    <div>
+        <label>Password:* </label>
+        <input type="password" name="password">
+    </div>
+    <br>
+    <div>
+        <label>Confirm Password:* </label>
+        <input type="password" name="confirm_password">
+    </div>
+    <br>
+    <div>
+        <label>Birthday:* </label>
+        <input type="date" name="birthday">
+    </div>
+    <br>
+    <div>
+        <label>Gender Identity:</label>
+        <br>
+        <input type="radio" name="gender" id="male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="NonBinary">
+        <label for="NonBinary">Non-binary</label>
+        <input type="radio" name="gender" id="noanswer">
+        <label for="noanswer">I prefer Not to answer</label>
+    </div>
+    <br>
+    <label>A short description about myself:</label>
+    <br>
+    <textarea name="description" id="desc" cols="30" rows="10"></textarea>
+    <div>
+        <label>Favourite Language</label>
+        <select name="stack">
+            <option>Java</option>
+            <option>Python</option>
+            <option>MERN</option>
+            <option>MEAN</option>
+            <option>CSS</option>
+            <option>HTML</option>
+            <option>JS</option>
+        </select>
+    </div>
+    <br>
+    <input type="checkbox" name="periodic" id="mail" checked> 
+    <label for="id">Yes, I would like to recieve preiodic email updates</label>
+    <br>
+    <input type="submit" name="Create Account">
+    <br>
+    <label>*Indicates a required field</label>
+</body>
+</html>
