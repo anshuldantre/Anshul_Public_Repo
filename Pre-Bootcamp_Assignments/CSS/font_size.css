@@ -1,0 +1,24 @@
+a {
+    width: 25px;
+}
+
+div {
+    width: 200%;
+    height: 100px;
+}
+
+img {
+    height: 500px;
+}
+
+h3 {
+    font-size: 20pt;
+}
+
+p {
+    font-size: 20px;
+}
+
+span {
+    font-size: 300%;
+}

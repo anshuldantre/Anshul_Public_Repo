@@ -1,0 +1,49 @@
+form input {
+    border: solid blue;
+}
+
+.login > input {
+    border: solid yellow 3px;
+}
+
+label[for="username"] {
+    background-color: aqua;
+}
+
+input#username {
+    background-color: pink;
+}
+
+span {
+    color: red;
+}
+
+p {
+    margin: 30px;
+    border: solid black 2px;
+    padding: 15px;
+}
+
+.greentext {
+    color: green;
+}
+
+.bluetext {
+    color: blue;
+}
+/* 
+form {
+    margin-top: 20px;
+} */
+
+.middleboxes {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50px;
+    border-right: 5px dotted red;
+    border-left: 10px green solid;
+    border-bottom: 8px solid yellow;
+    border-top: dotted 1px cyan;
+}
