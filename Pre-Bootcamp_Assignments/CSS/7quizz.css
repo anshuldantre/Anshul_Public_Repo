@@ -1,0 +1,36 @@
+/*0,0,1*/
+/* li {   
+    color: tomato;
+} */
+
+/*0,0,2*/
+/* ul li {
+    color: orange
+} */
+
+/*0,1,0*/
+/* .activeul {
+    color: brown;
+} */
+
+/*0,1,0*/
+/* li .activeil {
+    color: brown;
+} */
+
+/*      * > .main {   0,1,0 */
+/*      .main > * {   0,1,0 */
+
+
+.main > * {
+    background-color: rebeccapurple;
+    text-align: center;
+    color: white;
+    outline: 2px solid green;
+}
+
+.void {
+    background-color: tomato;
+    color: blanchedalmond;
+    outline: 2px solid red ;
+}

@@ -1,0 +1,27 @@
+.link {
+    color: red;
+}
+
+.quote {
+    text-align: center;
+}
+
+a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+    color: blue;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+
+[href] {
+    font-size: xx-small;
+}
+
+* {
+    outline: 1px solid red;
+}
