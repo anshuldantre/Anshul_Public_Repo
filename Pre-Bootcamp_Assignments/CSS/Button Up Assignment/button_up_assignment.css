@@ -1,0 +1,30 @@
+.srch {
+    height: 30px;
+    width: 150px;
+    margin-bottom: 15px;
+    color: #009b9d;
+    border-radius: 15px;
+    border: 2px solid;
+    font-weight: 900;
+}
+
+.plus {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background-color: #00d1b2;
+    border: 0px;
+    color: white;
+    font-size: larger;
+}
+
+.acc {
+    height: 30px;
+    width: 200px;
+    margin-bottom: 15px;
+    background-color: #2e74e6;
+    color: #ffffff;
+    border: 2px solid black;
+    box-shadow: 3px 3px 1px black;
+}
