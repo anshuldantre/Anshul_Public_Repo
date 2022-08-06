@@ -1,0 +1,22 @@
+h1 {
+    text-align: left;
+    background-color: black;
+    font-weight: bolder;
+    color: white;
+}
+
+h2 {
+    background-color: rebeccapurple;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-style: italic;
+}
+
+h3 {
+    background-color: lightblue;
+    color: rebeccapurple;
+    text-align: right;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+}
