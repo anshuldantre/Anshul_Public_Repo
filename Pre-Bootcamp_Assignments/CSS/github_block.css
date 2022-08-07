@@ -3,7 +3,9 @@
     width: 1100px;
     height: 1100px;
     background-color: #f9f9ff;
-    }
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 img {
     width:  260px;
@@ -13,10 +15,6 @@ img {
 .topbar {
     background-color: black;
     height: 5px;
-}
-
-h1 {
-    text-align: center;
 }
 
 .top-background, .bottombackground, .middlebackground {
@@ -49,4 +47,13 @@ h1 {
 
 .row2 {
     justify-content: space-around;
+}
+
+.colr {
+    color: #4bc4da;
+}
+
+.font {
+    color: grey;
+    font-family: 'Times New Roman', Times, serif;
 }
