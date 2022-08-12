@@ -1,0 +1,31 @@
+/* h1 {
+    color: green;
+    background-color: cyan;
+}
+
+body {
+    background-image: url(./catstello.png);
+} */
+
+.container {
+    margin: auto;
+   width: 960px;
+     color: white;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    border: solid red 5px;
+    border-bottom: green 5px solid;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    list-style: none;
+}
+
+.box-1 {
+    background-color: cyan;
+}
