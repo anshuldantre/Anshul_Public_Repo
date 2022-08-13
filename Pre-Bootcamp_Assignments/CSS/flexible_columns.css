@@ -1,0 +1,25 @@
+.row {
+    background-color: grey;
+    height: 100px;
+    display: flex;
+    margin: 0 auto;
+    /* justify-content: center; */
+}
+
+.col {
+    background-color: green;
+    margin: 10px;
+    flex: 1;
+}
+
+.col-2 {
+    background-color: green;
+    margin: 10px;
+    flex: 2;
+}
+
+.col-3 {
+    background-color: green;
+    margin: 10px;
+    flex: 3;
+}
