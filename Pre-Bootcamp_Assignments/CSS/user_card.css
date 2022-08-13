@@ -1,0 +1,44 @@
+.container {
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plot {
+    width: 100%;
+    background-color: white;
+    border: gray 2px solid;
+    overflow: hidden;
+}
+
+.topbar {
+    background-color: #00a2b6;
+    height: 100px;
+    margin-bottom: 80px;
+}
+
+.profile_image {
+    width: 150px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.pics {
+    width: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.details {
+    font-size: large;
+    font-weight: 500;
+    padding-left: 25px;
+}
