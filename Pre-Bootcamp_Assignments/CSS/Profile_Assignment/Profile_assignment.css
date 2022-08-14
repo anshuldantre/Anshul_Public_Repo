@@ -50,29 +50,60 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.bottom-section  {
+    display: flex; 
+    width: 90%;
+}
+
 .user-profile {
     display: flex;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     margin-top: 50px;
     margin-left: 100px;
-    /* width: 450px; */
-    height: 800px;
+    height: 400px;
     border: 2px solid gray;
     flex: 2;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.display-card {
+    background: #00a2b6;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 50px;
+    padding-left: 25px;
+}
+
+.display-card img{
+    border-radius: 50%;
+    margin: 10px;
+    padding: 5px;
+    background-color: white;
 }
 
 .connections {
     display: flex;
     background-color: blanchedalmond;
     margin-top: 50px;
-    margin-left: 100px;
-    /* width: 450px; */
-    height: 800px;
+    margin-left: 25px;
+    width: 450px;
+    height: 400px;
     border: 2px solid gray;
     flex: 1;
 }
 
-.botton-section  {
-    display: flex;
-    width: 90%;
+.user-profile h1, .user-profile h3, .user-profile p, .user-profile tx {
+    padding-left: 20px;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.icon {
+    width: 12px;
+}
+
+.education {
+    border: 2px red solid;
 }

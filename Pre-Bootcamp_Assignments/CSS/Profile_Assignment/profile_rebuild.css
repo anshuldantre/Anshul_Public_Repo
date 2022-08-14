@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.top {
+    background-color: black;
+}
+
+.nav {
+    width: 1200px;
+    margin: 0 auto;
+    color: white;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    width: 80%;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+.nav-title {
+    margin-left: 20px;
+}
+
+.btn {
+    height: 30px;
+    width: 100px;
+    font-size: large;
+    background-color: #00a2b6;
+    color: white;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.col, .col-2 {
+    margin: 10px;
+    padding: 10px;
+    background-color: cadetblue;
+    flex: 2;
+}
+
+.col-2 {
+    flex: 1;
+}
+
+.plot {
+    width: 100%;
+    background-color: white;
+    border: gray 2px solid;
+    overflow: hidden;
+}
+
+.topbar {
+    background-color: #00a2b6;
+    height: 100px;
+    margin-bottom: 80px;
+}
+
+.profile_image {
+    width: 150px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.pics {
+    width: 12px;
+}
+
+.details {
+    font-size: large;
+    font-weight: 500;
+    padding-left: 25px;
+}

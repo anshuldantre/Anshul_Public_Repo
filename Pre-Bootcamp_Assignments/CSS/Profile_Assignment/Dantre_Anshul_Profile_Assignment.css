@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body  {
+    font-family: 'Roboto', sans-serif;
+}
+
+.top {
+    margin: 0 auto;
+    background-color: black;
+}
+
+.nav {
+    margin: 0 auto;
+    width: 60%;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links ul {
+    width: 50%;
+    height: 80px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    background-color: #00a2b6;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: large;
+}
+
+/* Logical diviion of boxes */
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.col-1, .col-2 {
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+} 
+
+.col-1 {
+    flex: 2;
+}
+
+/* Logical diviion of user card */
+
+.plot, .conn-card, .your-card {
+    width: 100%;
+    background-color: white;
+    border: gray 2px solid;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.topbar {
+    background-color: #00a2b6;
+    height: 100px;
+    margin-bottom: 100px;
+}
+
+.profile_image {
+    width: 150px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.pics {
+    width: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.details {
+    font-size: large;
+    font-weight: 500;
+    padding: 25px;
+}
+
+.count {
+    border-radius: 12px;
+    background-color: lightgray;
+    color: black;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+/* Logical diviion of Connection card */
+
+.photo {
+    border-radius: 50%;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.header {
+    background-color:#333333;
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: large;
+}
+
+.start, .end
+{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: large;
+}
+
+.date {
+    padding: 5px;
+    color: grey;
+    font-size: 19px;
+}
+
+.bottom {
+    border-top: 2px solid black;
+    padding: 10px;
+}
