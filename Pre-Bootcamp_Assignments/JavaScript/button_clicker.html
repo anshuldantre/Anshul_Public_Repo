@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="./button_clicker.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<h1 onclick="removeText(this)">Remove text</h1>
+    <div class="nav">
+        <div class="nav-links">
+            <h1>Dojonary</h1>
+            <input class="srch" type="text" placeholder="SEARCH">
+            <button class="lgn" onclick="changeText(this)">LOGIN</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row-1">
+            <div class="col-1">
+                <div class="display-1">
+                    <div class="spell">
+                        <h1>ninja</h1>
+                        <p> <em>noun</p> </em>
+                        <p>Plural: <em>ninjas</em></p>
+                        <button class="btn-1" onclick="alertMsg('Ninja was liked')">13 Likes</button>
+                    </div>
+                    <div class="desc">
+                        <h3>A practiconer skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="display-2">
+                    <p class="dojonary">Dojonary is</p>
+                    <p class="dojonary">defined by <strong>YOU</strong></p>
+                    <button class="butn" onclick="removeButton(this)">ADD Definition</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-1">
+            <div class="col-1">
+                <div class="display-1">
+                    <div class="spell">
+                        <h1>ninja</h1>
+                        <p> <em>noun</p> </em>
+                        <p>Plural: <em>ninjas</em></p>
+                        <button class="btn-1" onclick="v('Ninja was liked')">37 Likes</button>
+                    </div>
+                    <div class="desc">
+                        <h3>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
+
+    <script src="./button_clicker.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.nav {
+    margin: 0 auto;
+    width: 800px;
+    background-color: #cccccc;
+    height: 80px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.srch {
+    width: 300px;
+    border: 2px solid black;
+    height: 25px;
+}
+
+.lgn {
+    width: 120px;
+    height: 30px;
+    background-color: #2b78e4;
+    color: white;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+}
+
+
+/* Bottom section */
+
+.container {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.row-1 {
+    display: flex;
+    margin-top: 20px;
+}
+
+.col-1, .col-2 {
+    flex: 1;
+}
+
+.col-1 {
+    flex: 2;
+}
+
+.display-1, .display-2, .display-3 {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.display-2 {
+    margin-left: 20px;
+}
+
+.display-1 {
+    display: flex;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.spell {
+    width: 250px;
+}
+
+.desc {
+    align-items: center;
+    margin: 0px 70px;
+}
+
+.btn-1 {
+    margin-top: 20px;
+    width: 100px;
+    height: 35px;
+    background-color: #ffd966;
+    box-shadow: 2px 2px black;
+    border: 2px solid black;
+}
+
+
+.butn {
+    width: 200px;
+    height: 30px;
+    background-color: #94c47d;  
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+    margin: 10px;
+}
+
+.dojonary {
+    font-size: x-large;
+}
