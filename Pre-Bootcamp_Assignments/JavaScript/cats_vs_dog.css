@@ -1,0 +1,16 @@
+#btn, #image {
+    width: 200px;
+}
+
+.butn {
+    background-color: orange;
+    color: #fff;
+    border: 2px solid green;
+    border-radius: 10px;
+    box-shadow: 3px 3px black;
+}
+
+.dark-mode {
+    background-color: black;
+    color: #fff;
+}
