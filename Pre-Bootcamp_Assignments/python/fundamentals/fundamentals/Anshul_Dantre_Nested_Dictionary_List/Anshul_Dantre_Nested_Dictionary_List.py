@@ -35,20 +35,23 @@ students = [
          {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
 
-def iterateDictionary(my_list):
-    for x in my_list:
-        print('first_name -',x['first_name']+', last_name -',x['last_name'])
-
-iterateDictionary(students)
-
 # def iterateDictionary(my_list):
-    # for x in range(0,len(my_list)):
-        #print(my_list[x]["first_name"])
+#     for x in my_list:
+#         print('first_name -',x['first_name']+', last_name -',x['last_name'])
+
+# iterateDictionary(students)
+
+def iterateDictionary(my_list):
+    for x in range(0,len(my_list)-1):
+        output=""
+        for key, val in my_list[x].items():
+            output= output + f" {key} - {val},"
+        print(output)
         
     # for x in my_list:
     #     for key, val in x.items():
     #         print(key,'-',val)
-# iterateDictionary(students)
+iterateDictionary(students)
 
 # bonus to get them to appear exactly as below!)
 # first_name - Michael, last_name - Jordan
