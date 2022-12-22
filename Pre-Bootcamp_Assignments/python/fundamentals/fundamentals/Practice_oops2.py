@@ -1,8 +1,10 @@
 class User:
-    def __init__(self, name, email, acc_type):
+    def __init__(self, name, email):
         self.name = name
         self.email = email
-        self.account = BankAccount(interest_rate=0.02, balance=0, acc_type=acc_type)
+        # self.account = BankAccount(interest_rate=0.02, balance=0, acc_type=acc_type)
+        self.account = {'Checking': BankAccount(interest_rate=0.02, balance=0),
+                        'Savings': BankAccount(interest_rate=0.02, balance=0)}
 
     def display_user_balance(self):
         # print(f'within user class, {self.name}')
@@ -17,13 +19,18 @@ class User:
         self.account.withdraw(amount)
         return self
 
+    # def add_account(self, acc_type):
+    #     if acc_type in self.account:
+    #         print(f"Account type {acc_type} already exists for you")
+    #     else:
+    #         self.account[acc_type]=BankAccount(acc_type, interest_rate=0.02, balance=0)
 
 class BankAccount:
-    acc_list = []
-    def __init__(self, interest_rate, balance, acc_type):
+    acc_dict = {}
+    def __init__(self, acc_type, interest_rate, balance):
+        self.acc_type = acc_type
         self.interest_rate = interest_rate
         self.balance = balance
-        self.acc_type = acc_type
         BankAccount.acc_list.append(self)
 
     @staticmethod
@@ -42,8 +49,7 @@ class BankAccount:
             self.balance -= 5
         return self
 
-    def user_balance(self, instance_name):
-        print(f'within bank class, {instance_name.name}')
+    def user_balance(self):
         for i in range(0,len(BankAccount.acc_list)):
             print(BankAccount.acc_list[i])
 
@@ -57,14 +63,24 @@ class BankAccount:
         # for i in range(0,len(BankAccount.acc_list)):
         #     print((BankAccount.acc_list[i].acc_type))
         # print(f'{name}, {self.acc_type} balance = {self.balance}')
-        return self
+        # return self
 
-user1 = User('Anshul Dantre','anshul.dantre@codingdojo.com', 'savings')
-user2 = User('Robert Buckley','robert.buckley@codingdojo.com','savings')
-user1 = User('Anshul Dantre','anshul.dantre@codingdojo.com', 'checking')
-user4 = User('Robert Buckley','robert.buckley@codingdojo.com', 'checking')
+# user1 = User('Anshul Dantre','anshul.dantre@codingdojo.com', 'savings')
+# user2 = User('Robert Buckley','robert.buckley@codingdojo.com','savings')
+# user1 = User('Anshul Dantre','anshul.dantre@codingdojo.com', 'checking')
+# user4 = User('Robert Buckley','robert.buckley@codingdojo.com', 'checking')
 
-user1.display_user_balance()
+user1 = User('Anshul Dantre','anshul.dantre@codingdojo.com')
+
+# print(user1.account)
+# user1.add_account('checking')
+# user1.add_account('checking')
+# print(user1.name)
+# print(user1.account['checking'].balance)
+# user1.add_account('savings')
+# print(user1.account)
+
+# user1.display_user_balance()
 # print('----------------------------------------')
 # user1.make_deposit(5).make_deposit(4).make_deposit(3).do_withdrawal(1).display_user_balance()
 # user2.make_deposit(100).make_deposit(200).make_deposit(300).do_withdrawal(356).display_user_balance()
