@@ -1,0 +1,75 @@
+Microsoft Windows [Version 10.0.22621.1105]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\shrad>pip install pipenv
+Collecting pipenv
+  Downloading pipenv-2022.12.19-py3-none-any.whl (2.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 9.1 MB/s eta 0:00:00
+Collecting certifi
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 9.7 MB/s eta 0:00:00
+Requirement already satisfied: setuptools>=36.2.1 in c:\users\shrad\appdata\local\programs\python\python311\lib\site-packages (from pipenv) (65.5.0)
+Collecting virtualenv-clone>=0.2.5
+  Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)
+Collecting virtualenv
+  Downloading virtualenv-20.17.1-py3-none-any.whl (8.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 10.7 MB/s eta 0:00:00
+Collecting distlib<1,>=0.3.6
+  Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.5/468.5 kB 9.8 MB/s eta 0:00:00
+Collecting filelock<4,>=3.4.1
+  Downloading filelock-3.9.0-py3-none-any.whl (9.7 kB)
+Collecting platformdirs<3,>=2.4
+  Downloading platformdirs-2.6.2-py3-none-any.whl (14 kB)
+Installing collected packages: distlib, virtualenv-clone, platformdirs, filelock, certifi, virtualenv, pipenv
+Successfully installed certifi-2022.12.7 distlib-0.3.6 filelock-3.9.0 pipenv-2022.12.19 platformdirs-2.6.2 virtualenv-20.17.1 virtualenv-clone-0.5.7
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+C:\Users\shrad>cd E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask
+
+C:\Users\shrad>E:
+
+E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask> python.exe -m pip install --upgrade pip
+Requirement already satisfied: pip in c:\users\shrad\appdata\local\programs\python\python311\lib\site-packages (22.3)
+Collecting pip
+  Downloading pip-22.3.1-py3-none-any.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 8.2 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3
+    Uninstalling pip-22.3:
+      Successfully uninstalled pip-22.3
+Successfully installed pip-22.3.1
+
+E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask>cd hello_flask
+The system cannot find the path specified.
+
+E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask>cd E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask\fundamentals
+
+E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask\fundamentals>cd E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask\fundamentals\hello_flask
+
+E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask\fundamentals\hello_flask>pipenv install flask
+Creating a virtualenv for this project...
+Pipfile: E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask\fundamentals\hello_flask\Pipfile
+Using C:/Users/shrad/AppData/Local/Programs/Python/Python311/python.exe (3.11.0) to create virtualenv...
+[==  ] Creating virtual environment...created virtual environment CPython3.11.0.final.0-64 in 1018ms
+  creator CPython3Windows(dest=C:\Users\shrad\.virtualenvs\hello_flask-1mvQcetz, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\shrad\AppData\Local\pypa\virtualenv)
+    added seed packages: pip==22.3.1, setuptools==65.6.3, wheel==0.38.4
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+Successfully created virtual environment!
+Virtualenv location: C:\Users\shrad\.virtualenvs\hello_flask-1mvQcetz
+Creating a Pipfile for this project...
+Installing flask...
+Pipfile.lock not found, creating...
+Locking [packages] dependencies...
+Locking [dev-packages] dependencies...
+Updated Pipfile.lock (60364d8fec40062cefddf8fc7df3eb90e861b5d9e9b7faf7d5782480799581c9)!
+Installing dependencies from Pipfile.lock (9581c9)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+
+E:\Dojo\Pre-Bootcamp_Public\Pre-Bootcamp_Assignments\python\flask\fundamentals\hello_flask>
