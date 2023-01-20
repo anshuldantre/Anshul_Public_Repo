@@ -17,6 +17,9 @@ def say_name(name):
 def pattern(num,text):
     return f'{num * text}'
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return "Invalid Page, Please check the URL!"
 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)    # Run the app in debug mode.
