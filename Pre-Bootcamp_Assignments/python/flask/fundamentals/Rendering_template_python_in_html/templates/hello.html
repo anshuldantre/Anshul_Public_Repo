@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python in HTML</title>
+</head>
+<body>
+    <h2>This is how we print variable from Python</h2>
+    {{var1}}
+    {{var2}}
+
+    <h1>This is how we run a python expression in html via Jinja2</h1>
+    {% for i in range(0,var2): %}
+        <p>Hello {{var1}}!</p>
+    {% endfor %}
+
+
+    <h3>My Flask Template</h3>
+    <p>Phrase: {{var1}}</p>
+    <p>Times: {{var2}}</p>
+
+    {% for a in range(0,var2): %}
+        <p>{{var1}}</p>
+    {% endfor %}
+
+    {% if var1 == "Shradha" %}
+        <p>The phrase says hello</p>
+    {% endif %}
+
+</body>
+</html>
