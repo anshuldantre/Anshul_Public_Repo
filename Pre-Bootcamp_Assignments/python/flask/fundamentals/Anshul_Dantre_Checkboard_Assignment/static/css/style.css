@@ -1,0 +1,16 @@
+* {
+    margin: 80;
+    padding: 0;
+}
+
+.color1 {
+    background-color: red;
+    width: 80px;
+    height: 80px;
+}
+
+.color2 {
+    background-color: blue;
+    width: 80px;
+    height: 80px;
+}
