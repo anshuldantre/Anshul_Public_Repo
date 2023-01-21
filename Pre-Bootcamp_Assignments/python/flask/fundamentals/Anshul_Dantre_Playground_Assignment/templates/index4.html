@@ -30,9 +30,9 @@
 <body>
     <h1>Welcome</h1>
     <div class="flex-container">
-        {% if NOT no_of_boxes %}
-            <div style="background-color: red"></div>
-        {% endif %}
+        {% for i in range (0,no_of_boxes): %}
+            <div style="background-color: {{box_color}}"></div>
+        {% endfor %}
 
     </div>
 
