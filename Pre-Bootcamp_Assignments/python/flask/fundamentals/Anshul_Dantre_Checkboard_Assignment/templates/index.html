@@ -8,14 +8,21 @@
     <title>Checkerboard</title>
 </head>
 <body>
+    <h1 style="background-color: {{col1}}; color: {{col2}};">*** Checkerboard ***</h1>
     <table>
-        {% for i in range(a): %}
-        <tr>
-            {% for j in range(b): %}
-            <td class="color{{ (i + j)%2 +1 }}"></td>
+        <tbody>
+            {% for i in range(0,a) %}
+                <tr>
+                    {% for j in range(0,b) %}
+                        {% if (i + j) % 2 == 0 %}
+                            <td style="background-color: {{col1}};"></td>
+                        {% else %}
+                            <td style="background-color: {{col2}};"></td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
             {% endfor %}
-        </tr>
-        {% endfor %}
+        </tbody>
     </table>
 </body>
 </html>

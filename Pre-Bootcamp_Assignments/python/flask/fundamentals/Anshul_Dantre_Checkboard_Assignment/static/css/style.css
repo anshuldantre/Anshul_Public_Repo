@@ -1,16 +1,28 @@
 * {
-    margin: 80;
+    margin: 0;
     padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
 }
 
-.color1 {
-    background-color: red;
-    width: 80px;
-    height: 80px;
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    padding: 10px;
+    margin: 15px;
 }
 
-.color2 {
-    background-color: blue;
+table {
+    border-collapse: collapse;
+
+}
+
+td {
     width: 80px;
     height: 80px;
 }
