@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering a html table from Python list</title>
+</head>
+<body>
+    <table>
+        <h1>Python dictionary as HTML table</h1>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+            {% for f in friends %}
+            <tr>
+                <td>{{ f["name"] }}</td>
+                <td>{{ f["age"] }}</td>
+            </tr>
+                {% endfor %}
+    </table>
+
+<h1>Python list as HTML unordered list</h1>
+<ul>
+    {% for i in random_numbers %}
+    <li>{{i}}</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
