@@ -7,6 +7,9 @@ def index():
     if 'click_count' not in session:
         session['click_count'] = 0
     session['click_count'] += 1
+    if 'visit_count' not in session:
+        session['visit_count'] = 0
+    session['visit_count'] += 1
     return render_template('index.html')
 
 @app.route('/userclick', methods=['POST'])
