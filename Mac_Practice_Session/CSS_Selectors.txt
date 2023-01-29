@@ -1,0 +1,103 @@
+1. Contents within plain element tag (Select the plate)
+element {} or plate {}
+	<div class="table">
+	<plate />
+	<plate />
+	</div>
+
+	Type Selector	: Select elements by their type
+	A			: Selects all elements of type A. Type refers to the type of tag, so div, p and ul are all different element types.
+	Examples		: div selects all div elements.
+			        p selects all p elements.
+
+2. Contents within plain elemtn tag (Select the both boxes)
+elemtn {} or bento {}
+	<div class="table">
+	<bento />
+	<plate />
+	<bento />
+	</div>
+--------------------------------------------------------------------------------------------------------------------------------
+3. Same class but with a specific Id (Select the fancy palte)
+#fancy
+	<div class="table">
+	<plate id="fancy" />
+	<plate />
+	<bento />
+	</div>
+
+	ID Selector		: Select elements with an ID
+	#id			: Selects the element with a specific id. You can also combine the ID selector with the type selector.
+	Examples		: #cool selects any element with id="cool"
+				  ul#long selects ul id="long"
+--------------------------------------------------------------------------------------------------------------------------------
+4. Element within an element. Same apple but one on table and one on plate (select the apples on the plate)
+element element {} or plate apple {}
+	<div class="table">
+	<bento />
+	<plate>
+		<apple />	-- Apple on plate
+	</plate>
+	<apple />		-- Apple on table
+	</div>
+
+Descendant Selector	: Select an element inside another element
+A  B				: Selects all B inside of A. B is called a descendant because it is inside of another element.
+Examples			: p  strong selects all strong elements that are inside of any p
+				  #fancy  span selects any span elements that are inside of the element with id="fancy"
+--------------------------------------------------------------------------------------------------------------------------------
+5. Elemtn within a specific ID (Select the pickle on the fancy plate)
+#id element {} or id space element {} or #fancy pickle
+	<div class="table">
+	<bento>
+		<orange />
+	</bento>
+	<plate id="fancy">
+		<pickle />		--Pickle on fancy palte
+	</plate>
+	<plate>
+		<pickle />		--Pickle on normal plate
+	</plate>
+	</div>
+
+	Combine the Descendant & ID Selectors
+	#id  A		: You can combine any selector with the descendent selector.
+	Examples		: #cool span selects all span elements that are inside of elements with id="cool"
+--------------------------------------------------------------------------------------------------------------------------------
+6. Elements within a class (Select the small apples)
+.class {} or .small
+	<div class="table">
+	<apple />				--Big Apple on table
+	<apple class="small" />		--Small apple on table
+	<plate>				--plate on table
+		<apple class="small" /> --small apple on plate
+	</plate>
+	<plate />				-- plate on table
+	</div>
+
+	Class Selector		: Select elements by their class
+	.classname			: The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.
+	Examples			: .neato selects all elements with class="neato"
+--------------------------------------------------------------------------------------------------------------------------------
+7. element within a common class but a spoecific element (Select the small oranges)
+element.class {} or orange.small {}
+
+	<div class="table">
+	<apple />					--Big apple on table
+	<apple class="small" />			--Small apple on table
+	<bento>					
+		<orange class="small" />	--small orange on bento
+	</bento>
+	<plate>
+		<orange />				--big orange on plate
+	</plate>
+	<plate>
+		<orange class="small" />	--small orange on plate
+	</plate>
+	</div>
+
+	Combine the Class Selector
+	A.className					: You can combine the class selector with other selectors, like the type selector.
+	Examples					: ul.important selects all ul elements that have class="important"
+							  #big.wide selects all elements with id="big" that also have class="wide"
+--------------------------------------------------------------------------------------------------------------------------------

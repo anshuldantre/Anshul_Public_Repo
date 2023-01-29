@@ -1,0 +1,58 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.flex-container {
+    height: 500px;
+    width: 500px;
+    /* background-color: peachpuff;
+    border: 1px black solid; */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: peachpuff;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: aqua;
+}
+
+.outer {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    margin-top: 20px;
+    /* background-color: aqua;
+    border: 1px solid red; */
+    display: flex;
+}
+
+.btn-1, .btn-2, .btn-3 {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.btn-1 {
+    background-color: rgba(0, 89, 255, 0.644);
+    border: 2px solid yellow;
+    color: yellow;
+}
+
+.btn-2 {
+    background-color: tomato;
+    border: 2px solid grey;
+    color: grey;
+}
+
+.btn-3 {
+    background-color: green;
+    border: 2px solid black;
+    color: white;
+}
+

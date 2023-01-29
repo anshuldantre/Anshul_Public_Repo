@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Session Counter</title>
+</head>
+<body>
+    <div class="flex-container">
+        <h1>Counter</h1>
+        <h3>{{ session['click_count'] }} Counts</h3>
+        <div class="outer">
+            <form action="/userclick" method="post">
+                <input class="btn-1" type="submit" value="Click">
+            </form>
+            <form action="/reset" method="post">
+                <input class="btn-2" type="submit" value="Reset">
+            </form>
+            <form action="/bytwo" method="post">
+                <input class="btn-3" type="submit" value="Plus2">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
