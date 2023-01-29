@@ -24,5 +24,11 @@ def addtwo():
         session['click_count'] += 1
     return redirect('/')
 
+@app.route('/userincrement', methods=['POST'])
+def userincrement():
+    if 'click_count' in session:
+        session['click_count'] += int(request.form['user_num']) -1
+    return redirect('/')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -6,8 +6,6 @@
 .flex-container {
     height: 500px;
     width: 500px;
-    /* background-color: peachpuff;
-    border: 1px black solid; */
 }
 
 h1 {
@@ -27,9 +25,8 @@ h3 {
     height: 400px;
     padding: 20px;
     margin-top: 20px;
-    /* background-color: aqua;
-    border: 1px solid red; */
     display: flex;
+    flex-wrap: wrap;
 }
 
 .btn-1, .btn-2, .btn-3 {
