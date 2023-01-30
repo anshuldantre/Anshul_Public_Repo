@@ -10,18 +10,18 @@
 <body>
 
     <div class="outer-container">
-        <div class="text-header">Welcome to the Great Number Game!!!</div>
+        <div class="text-header">Welcome to the Great Number Game !!!</div>
         <div class="text-smheader">I am thinking of a number between 1 and 100</div>
         <div class="text-smheader">Take a Guess</div>
 
         <div class="inner-flex">
             <div class="feedback">
-                
+                {{ session['msg'] }}
             </div>
 
             <div class="inputform">
                 <form action="/userform" method="POST">
-                    <input type="text" id="numinput">
+                    <input type="text" id="num1"  name="numinput">
                     <div class="btn">
                         <input type="submit" value="Submit">
                     </div>

@@ -18,19 +18,21 @@
 }
 
 .text-header {
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 .inner-flex {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    border: 1px black 2px;
 }
 
 .feedback {
     width: 200px;
     height: 100px;
-    /* background-color: rebeccapurple; */
+    background-color: rebeccapurple;
+    text-align: center;
 }
 
 .inputform, .btn {
