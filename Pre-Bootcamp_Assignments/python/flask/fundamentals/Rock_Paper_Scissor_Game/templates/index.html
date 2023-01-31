@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper and Scissor game</title>
+</head>
+<body>
+    <div id="container">
+        <form action="/selection" method="post">
+            <label for="">Select Rock, Paper or Scissors</label>
+            <select name="selection" id="selection">
+                <option value="Rock">Rock</option>
+                <option value="Paper">Paper</option>
+                <option value="Scissors">Scissors</option>
+            </select>
+            <button>Submit</button>
+        </form>
+        <br>
+        <strong>Your Choice: {{ session['our_choice'] }}</strong>
+        <br>
+        <strong>Opponents Choice: {{ session['oponnents_choice'] }}</strong>
+        <br>
+        <strong>Current Wins: {{ session['win'] }}</strong>
+        <br>
+        <strong>Current Loses: {{ session['loses'] }}</strong>
+        <br>
+        <strong>Current Draws: {{ session['draw'] }} </strong>
+        <br>
+        <strong>Last Result: {{ session['current_result'] }}</strong>
+        <br>
+        <h1>Add in the results of what happened</h1>
+        <br>
+        <a href="/clear_session">Clear session</a>
+    </div>
+</body>
+</html>
