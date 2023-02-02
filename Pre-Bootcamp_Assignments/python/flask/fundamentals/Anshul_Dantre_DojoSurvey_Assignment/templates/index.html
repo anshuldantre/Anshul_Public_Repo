@@ -11,7 +11,7 @@
     <div class="flex justify-center col-3 mx-auto text-left bg-dark mt-5">
         <div class="text-left text-warning fs-2 p-3">DOJO Survey</div>
         
-        <form action="/userinput" class="form text-left">
+        <form action="/process" class="form text-left" method="post">
             <div class="form-group ">
                 <div class="form-text ml-5 p-3">
                     <div class="fs-5 text-light pb-3">
@@ -36,16 +36,22 @@
                         <label for="language">Favourite Language</label>
                     </div>
                     <div class="textaria pb-3">
-                        <input class="w-75" type="text" id="language" name="language">
+                        <select class="w-75" name="language" id="language" >
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Python">Python</option>
+                            <option value="C#">C#</option>
+                        </select>
                     </div>
                     <div class="fs-5 text-light pb-3">
                         <label for="comments">Comments:</label>
                     </div>
                     <div class="textaria pb-3">
-                        <textarea class="w-75" name="textarea" id="comments" ></textarea>
+                        <textarea class="w-75" name="comments" id="comments" ></textarea>
                     </div>
-                    <div class="btn ">
-                        <input type="submit" value="Submit">
+                    <div class="btn">
+                        <input class="btn btn-warning" type="submit" value="Submit">
                     </div>
                 </div>
             </div>
