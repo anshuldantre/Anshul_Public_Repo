@@ -8,8 +8,8 @@ app.secret_key = 'NinjaGold'
 def index_default():
     if 'mytotalgold' not in session:
         session['mytotalgold'] = 0
-    # print(f'session[mytotalgold] = {session["mytotalgold"]}')
-    # print(f'session[player_activity_log] = {session["player_activity_log"]}')
+        session['player_activity_log'] = []
+        session['attempts_counter'] = 0
     return render_template('index.html')
 
 def current_timestamp():
@@ -18,40 +18,33 @@ def current_timestamp():
 
 @app.route('/process_money', methods=["POST"])
 def process_money():
-    current_date = datetime.datetime.now()
-    print(current_date.strftime("%Y/%m/%d %I:%M %p"))
+    session['attempts_counter'] += 1
+    current_outcome = []
+    color = "green"
 
-    if 'player_activity_log' not in session:
-        session['player_activity_log'] = []
+    if (request.form['which_button'] == 'farm') or (request.form['which_button'] == 'cave') or (request.form['which_button'] == 'house'):
+        if request.form['which_button'] == 'farm':
+            gold_value = random.randint(10,20)
+        elif request.form['which_button'] == 'cave': 
+            gold_value = random.randint(5,10)
+        elif request.form['which_button'] == 'house':
+            gold_value = random.randint(2,5)
 
-    if request.form['which_button'] == 'farm':
-        farm_gold_earned = random.randint(10,20)
-        # print(f'Total gold earned in farm {farm_gold_earned}')
-        session['mytotalgold'] += farm_gold_earned
-        session['player_activity_log'].append({"log":f"Earned {farm_gold_earned} golds from the farm! {current_timestamp()}","color":"green"})
-
-    if request.form['which_button'] == 'cave':
-        cave_gold_earned = random.randint(5,10)
-        # print(f'Total gold earned in cave {cave_gold_earned}')
-        session['mytotalgold'] += cave_gold_earned
-        session['player_activity_log'].append({"log":f"Earned {cave_gold_earned} golds from the Cave! {current_timestamp()}","color":"green"})
-
-    if request.form['which_button'] == 'house':
-        house_gold_earned = random.randint(2,5)
-        # print(f'Total gold earned in house {house_gold_earned}')
-        session['mytotalgold'] += house_gold_earned
-        session['player_activity_log'].append({"log":f"Earned {house_gold_earned} golds from the house! {current_timestamp()}","color":"green"})
+        session['mytotalgold'] += gold_value
+        current_outcome.append({"log":f"Earned {gold_value} golds from the {request.form['which_button']}! {current_timestamp()}","color":color})
 
     if request.form['which_button'] == 'casino':
         casino_choice = random.choice(['earn', 'give'])
-        casino_gold_value = random.randint(0,50)
-        print(f'This time in casino, you {casino_choice} {casino_gold_value} gold')
+        gold_value = random.randint(0,50)
+
         if casino_choice == 'earn':
-            session['mytotalgold'] += casino_gold_value
-            session['player_activity_log'].append({"log":f"Entered a Casino and Earned {casino_gold_value} golds....Yeahhhh {current_timestamp()}","color":"green"})
+            session['mytotalgold'] += gold_value
+            current_outcome.append({"log":f"Entered a Casino and Earned {gold_value} golds....Yeahhhh {current_timestamp()}","color":color})
         else:
-            session['mytotalgold'] -= casino_gold_value
-            session['player_activity_log'].append({"log":f"Entered a Casino and Lost {casino_gold_value} golds....Ouch {current_timestamp()}","color":"red"})
+            session['mytotalgold'] -= gold_value
+            current_outcome.append({"log":f"Entered a Casino and Lost {gold_value} golds....Ouch  {current_timestamp()}","color":"red"})
+    current_outcome.extend(session['player_activity_log'])
+    session['player_activity_log']=current_outcome
 
     return redirect('/')
 

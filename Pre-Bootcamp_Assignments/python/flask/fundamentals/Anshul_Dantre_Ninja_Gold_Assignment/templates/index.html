@@ -78,20 +78,32 @@
             <div class="col-12 fw-bold p-5">
                 <label for="yourgold">Activities:</label>
                 <br>
-                {% for outcome in session['player_activity_log'] %}
-                <strong style="color:{{outcome['color']}}">
-                    {{ outcome['log'] }}
-                <br>
-                </strong>
-                {% endfor %}
+                {% if session.attempts_counter < 16 and session.mytotalgold > 500: %}
+                    <strong>You Win !! Click Replay to play again</strong>
+                    <br>
+                {% elif session.attempts_counter >= 15 and session.mytotalgold < 500: %}
+                    <strong>You Loose !! Click Replay to play again</strong>
+                    <br>
+                {% else: %}
+                    {% for outcome in session['player_activity_log'] %}
+                        <strong style="color:{{outcome['color']}}">
+                        {{ outcome['log'] }}
+                        <br>
+                        </strong>
+                    {% endfor %}
+                {% endif %}
+
+
             </div>
         </div>
 
+        {% if (session.attempts_counter >= 15 and session.mytotalgold < 500) or (session.mytotalgold > 500):  %}
         <div class="row d-flex m-5">
             <div class="col-2 fw-bold text-center">
                 <a href="/replay">Replay</a>
             </div>
         </div>
+        {% endif %}
     </div>
 </body>
 </html>
