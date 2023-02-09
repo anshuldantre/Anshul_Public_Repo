@@ -21,9 +21,7 @@
             </div>
             <div class="col-3">
                 <div class="form-floating text-left">
-                    <textarea id="activity" cols="20" rows="1" disabled>
-                        {{ session.mytotalgold }}
-                    </textarea>
+                    <input type="text" disabled value="{{ session.mytotalgold }}" >
                 </div>
             </div>
         </div>
@@ -81,7 +79,7 @@
                 {% if session.attempts_counter < 16 and session.mytotalgold > 500: %}
                     <strong>You Win !! Click Replay to play again</strong>
                     <br>
-                {% elif session.attempts_counter >= 15 and session.mytotalgold < 500: %}
+                {% elif session.attempts_counter > 15 and session.mytotalgold < 500: %}
                     <strong>You Loose !! Click Replay to play again</strong>
                     <br>
                 {% else: %}
@@ -97,7 +95,7 @@
             </div>
         </div>
 
-        {% if (session.attempts_counter >= 15 and session.mytotalgold < 500) or (session.mytotalgold > 500):  %}
+        {% if (session.attempts_counter > 15 and session.mytotalgold < 500) or (session.mytotalgold > 500):  %}
         <div class="row d-flex m-5">
             <div class="col-2 fw-bold text-center">
                 <a href="/replay">Replay</a>
