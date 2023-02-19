@@ -11,7 +11,7 @@ class Friend:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
-    # Now we use class methof to query our database
+    # Now we use class method to query our database
     @classmethod
     def get_all(cls):
         query = 'SELECT * FROM friends;'
@@ -23,3 +23,8 @@ class Friend:
         for friend in results:
             friends.append( cls(friend) )
         return friends
+
+    @classmethod
+    def save(cls, data):
+        query = "INSERT INTO friends (first_name, last_name, occupation, created_at, updated_at) VALUES ( %(fname)s, %(lname)s, %(occ)s, now(), now() )"
+        return connectToMySQL('first_flask').query_db(query, data)
