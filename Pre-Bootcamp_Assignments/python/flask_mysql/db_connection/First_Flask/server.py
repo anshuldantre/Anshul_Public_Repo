@@ -19,5 +19,11 @@ def create_friend():
     Friend.save(data)
     return redirect('/')
 
+@app.route("/friend/<int:id>")
+def get_friend(id):
+    print("reached server.py")
+    friend_detail = Friend.get_one(id)
+    return render_template("Friend_Detail.html", friend_detail = friend_detail)
+
 if __name__ == '__main__':
     app.run(debug=True)

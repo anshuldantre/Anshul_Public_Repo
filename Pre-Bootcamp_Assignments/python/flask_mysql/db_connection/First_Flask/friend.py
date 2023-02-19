@@ -25,6 +25,14 @@ class Friend:
         return friends
 
     @classmethod
+    def get_one(cls, id):
+        print("reached friend.py")
+        query = "SELECT * FROM friends where id = %(id)s"
+        data = {"id" : id }
+        results = connectToMySQL("first_flask").query_db(query, data)
+        return cls(results[0])
+
+    @classmethod
     def save(cls, data):
         query = "INSERT INTO friends (first_name, last_name, occupation, created_at, updated_at) VALUES ( %(fname)s, %(lname)s, %(occ)s, now(), now() )"
         return connectToMySQL('first_flask').query_db(query, data)
