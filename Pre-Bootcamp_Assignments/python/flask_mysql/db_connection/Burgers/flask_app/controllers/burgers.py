@@ -1,10 +1,11 @@
 from flask_app import app
 from flask import Flask, render_template, redirect, request, session
 from flask_app.models.burger import Burger
+from flask_app.models.restaurants import Restaurants
 
 @app.route('/')
 def index():
-    return render_template("index.html", )
+    return render_template("index.html", all_restaurants=Restaurants.get_all_restaurants())
 
 @app.route('/create',methods=['POST'])
 def create():

@@ -2,7 +2,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import burger
 
 class Restaurants:
-    DB = "restaurants"
+    DB = "burgers"
     def __init__(self, db_data):
         self.id = db_data['id']
         self.name = db_data['name']
@@ -41,7 +41,7 @@ class Restaurants:
     @classmethod
     def get_all_restaurants(cls):
         restaurant_list = []
-        query = 'SELECT * FROM restaurants ORDER BY 1'
+        query = 'SELECT * FROM restaurants ORDER BY name'
         result = connectToMySQL(cls.DB).query_db(query)
         for x in result:
             restaurant_list.append( cls(x) )
