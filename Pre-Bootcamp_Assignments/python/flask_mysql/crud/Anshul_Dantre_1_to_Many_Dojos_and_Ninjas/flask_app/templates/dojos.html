@@ -30,7 +30,7 @@
                 <h2 class="text-center text-primary pt-4">All Dojos</h2>
                 <div class="text-center">
                     {% for dojos in dojo_list %}
-                        <a class="text-warning text-decoration-none" href="/list_all_ninjas/{{ dojos.id }}">{{ dojos.name }}</a>
+                        <a class="text-warning text-decoration-none" href="/get_all_ninjas_in_dojo/{{ dojos.id }}">{{ dojos.name }}</a>
                         <br>
                     {% endfor %}
                 </div>

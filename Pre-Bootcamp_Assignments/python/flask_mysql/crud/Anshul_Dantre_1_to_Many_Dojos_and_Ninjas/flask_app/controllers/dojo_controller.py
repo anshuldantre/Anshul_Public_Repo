@@ -9,6 +9,10 @@ def dojos():
 
 @app.route("/add_new_dojo", methods=["POST"])
 def add_new_dojo():
-    print(f"reached controller with {request.form['dname']}")
     Dojo.create_new_dojo(request.form['dname'])
     return redirect("/")
+
+@app.route("/get_all_ninjas_in_dojo/<int:id>")
+def get_all_ninjas_in_dojo(id):
+    ninja_list = Dojo.get_all_ninjas_in_a_dojo(id)
+    return render_template("show_ninjas.html", ninja_list = ninja_list)
