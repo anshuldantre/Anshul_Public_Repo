@@ -20,3 +20,29 @@ class Ninja:
                 "dojo_id" : data['dojo_id']
                 }
         return connectToMySQL(cls.DB).query_db(query, data)
+    
+    @classmethod
+    def delete(cls, id):
+        query= "DELETE FROM ninjas WHERE id = %(id)s"
+        data= {"id":id}
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        return result
+
+    @classmethod
+    def edit_ninja(cls, id):
+        ninja = []
+        query= "SELECT * FROM ninjas WHERE id = %(id)s"
+        data = {"id": id}
+        results = connectToMySQL(cls.DB).query_db(query, data)
+        return results
+
+    @classmethod
+    def update(cls, data):
+        query = """ UPDATE ninjas 
+                    SET first_name = %(fname)s,
+                        last_name = %(lname)s,
+                        age = %(age)s
+                    WHERE id = %(id)s"""
+        data = {"id": data['id'], "fname": data['fname'], "lname": data['lname'], "age": data['age']}
+        results = connectToMySQL(cls.DB).query_db(query, data)
+        return results

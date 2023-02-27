@@ -18,8 +18,7 @@
                         <td scope="col">First Name</td>
                         <td scope="col">Last Name</td>
                         <td scope="col">Age</td>
-                        <td scope="col">Created At</td>
-                        <td scope="col">Updated At</td>
+                        <td scope="col">Actions</td>
                     </tr>
             </thead>
             <tbody class="fs-6">
@@ -28,8 +27,7 @@
                         <td scope="row">{{ ninja.first_name }}</td>
                         <td scope="row">{{ ninja.last_name }}</td>
                         <td scope="row">{{ ninja.age }}</td>
-                        <td scope="row">{{ ninja.created_at }}</td>
-                        <td scope="row">{{ ninja.updated_at }}</td>
+                        <td scope="row"><a href="/edit/{{ ninja.id }}" class="text-dark">Edit</a> | <a href="/delete_ninja/{{ ninja.id }}" class="text-dark">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

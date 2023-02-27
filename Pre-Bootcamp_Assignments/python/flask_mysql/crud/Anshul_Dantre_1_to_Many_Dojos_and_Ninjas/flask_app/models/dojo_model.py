@@ -13,9 +13,10 @@ class Dojo:
     @classmethod
     def create_new_dojo(cls, name):
         # print(f"recahed model with {name}")
-        query = "INSERT INTO dojos (name) VALUES (%(dname)s, NOW(), NOW() )"
+        query = "INSERT INTO dojos (name, created_at, updated_at) VALUES (%(dname)s, NOW(), NOW() )"
         data = {"dname": name}
-        return connectToMySQL(cls.DB).query_db(query, data)
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        return result
 
     @classmethod
     def get_all_dojos(cls):
@@ -28,7 +29,7 @@ class Dojo:
         return dojo_list
     
     @classmethod
-    def get_all_ninjas_in_a_dojo(cls, id):
+    def show_ninja(cls, id):
         query = "SELECT * FROM dojos LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id WHERE dojos.id = %(dojo_id)s ORDER BY ninjas.first_name"
         data = {"dojo_id" : id}
         results = connectToMySQL(cls.DB).query_db(query, data)
@@ -46,3 +47,14 @@ class Dojo:
             }
             dojo.ninjas.append( Ninja(ninja_list) )
         return dojo
+    
+    @classmethod
+    def deletedojo(cls, id):
+        print(f"within model {id}")
+        query = "DELETE FROM ninjas WHERE dojo_id = %(id)s"
+        data = {"id": id}
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        print("All Ninjas deleted, now deleting Dojo")
+        query = "DELETE FROM dojos WHERE id = %(id)s"
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        return result

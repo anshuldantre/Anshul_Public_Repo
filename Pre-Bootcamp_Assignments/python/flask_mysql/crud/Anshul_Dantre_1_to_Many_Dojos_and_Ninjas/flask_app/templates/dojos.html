@@ -30,13 +30,14 @@
                 <h2 class="text-center text-primary pt-4">All Dojos</h2>
                 <div class="text-center">
                     {% for dojos in dojo_list %}
-                        <a class="text-warning text-decoration-none" href="/get_all_ninjas_in_dojo/{{ dojos.id }}">{{ dojos.name }}</a>
-                        <br>
+                        <a class="text-warning text-decoration-none" href="/show_ninja/{{ dojos.id }}">{{ dojos.name }}</a>
+                        <a class="text-light" href="/delete_dojo/{{ dojos.id}}">Delete</a>
+                        <br><br>
                     {% endfor %}
                 </div>
             </div>
         </div>
-        <a href="/add_ninja">Add Ninja</a>
+        <a href="/ninja">Add Ninja</a>
     </div>
 </body>
 </html>
