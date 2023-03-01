@@ -50,7 +50,7 @@ class Dojo:
     
     @classmethod
     def deletedojo(cls, id):
-        print(f"within model {id}")
+        # print(f"within model {id}")
         query = "DELETE FROM ninjas WHERE dojo_id = %(id)s"
         data = {"id": id}
         result = connectToMySQL(cls.DB).query_db(query, data)

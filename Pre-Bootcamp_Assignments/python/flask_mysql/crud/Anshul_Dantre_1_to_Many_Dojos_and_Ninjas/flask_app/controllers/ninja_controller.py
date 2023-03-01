@@ -30,3 +30,4 @@ def delete_ninja(id):
 def update_ninja():
     results = Ninja.update(request.form)
     return redirect("/")
+
