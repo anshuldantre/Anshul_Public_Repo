@@ -62,3 +62,25 @@ print(today)
 
 a="12/07/2022"
 print(a[3:5])
+
+
+# =-----------------------------------
+str1  = "Anshul Dantre was here"
+str2 = "was"
+split_list=str1.split(str2)
+concat_str = ""
+
+for i in split_list:
+    concat_str = concat_str + i
+
+print(concat_str)
+
+
+str1  = "Anshul 123 Dantr2386748248111111e was here 1"
+# str1 = str1.islower()
+str2 = "1"
+new_str =""
+for i in str1:
+    if i != str2:
+        new_str += i
+print(new_str)
