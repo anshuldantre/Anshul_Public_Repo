@@ -13,7 +13,7 @@ class Author:
     @classmethod
     def list_authors(cls):
         authors = []
-        print("Within list_authors")
+        # print("Within list_authors")
         query="SELECT * FROM authors ORDER BY name"
         results = connectToMySQL(cls.db).query_db(query)
         for rows in results:
@@ -28,17 +28,6 @@ class Author:
         results = connectToMySQL(cls.db).query_db(query, data)
         return results
 
-    # @classmethod
-    # def get_author_details(cls, id):
-    #     print("Within get_author_details model")
-    #     details = []
-    #     query = "SELECT * FROM authors WHERE id = %(id)s"
-    #     data = { "id":id }
-    #     auth_details = connectToMySQL(cls.db).query_db(query, data)
-    #     for rows in auth_details:
-    #         details.append( cls(rows) )
-    #     return details
-    
     @classmethod
     def get_authors_favourite(cls, id):
         # print("Within get_authors_favourite model")
@@ -76,3 +65,17 @@ class Author:
         query = "INSERT INTO favourites values ( %(author_id)s, %(book_id)s )"
         results = connectToMySQL(cls.db).query_db(query, data)
         return results
+
+
+    @classmethod
+    def unfavoutire_authors(cls, id):
+        unfav_list = []
+        query="SELECT * FROM authors WHERE id NOT IN (SELECT author_id FROM favourites WHERE book_id = %(id)s ) ORDER BY name"
+        data = { "id" : id }
+        results = connectToMySQL(cls.db).query_db(query, data)
+        # print(results)
+        for rows in results:
+            unfav_list.append( cls(rows) )
+        return unfav_list
+    
+ 
