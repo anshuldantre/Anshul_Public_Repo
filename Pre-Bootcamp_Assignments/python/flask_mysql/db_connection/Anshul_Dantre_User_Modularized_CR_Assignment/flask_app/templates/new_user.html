@@ -10,6 +10,14 @@
 <body>
     <div class="container p-4">
         <h1 class="text-center col-sm-8">Add user !</h1>
+        
+        {% with messages = get_flashed_messages () %}
+            {% if messages %}
+                {%for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
         <form action="/add_user" method="post">
             <div class="text-left">

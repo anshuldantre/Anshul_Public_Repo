@@ -18,6 +18,8 @@ def new_user():
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
+    if not User.validate_user(request.form):
+        return redirect("/new_user")
     User.add_new_user(request.form)
     return redirect("/")
 
