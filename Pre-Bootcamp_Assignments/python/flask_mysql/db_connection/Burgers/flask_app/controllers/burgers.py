@@ -9,6 +9,11 @@ def index():
 
 @app.route('/create',methods=['POST'])
 def create():
+    # if there are errors:
+    # we call the staticmethod on Burger model to validate
+    if not Burger.validate_burger(request.form):
+        # redirect to the route where the burger form is rendered
+        return redirect("/")
     data = {
         "name":request.form['name'],
         "bun": request.form['bun'],
