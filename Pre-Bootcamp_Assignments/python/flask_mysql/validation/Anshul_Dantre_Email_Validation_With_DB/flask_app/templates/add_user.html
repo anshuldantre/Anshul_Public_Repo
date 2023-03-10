@@ -8,8 +8,45 @@
     <title>Add User</title>
 </head>
 <body>
-    <div class="container">
-        Add a New User
-    </div>
+    <body>
+        <div class="main">
+                <h1 class="header text-center mt-3">Add a New User</h1>
+                <br>
+            <div class="toast fade show container">
+                <div class="toast-header">Enter a New User</div>
+                <br>
+                <div class="text-danger fs-4">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="toast-body">
+                    <form action="/create" method="post" class="container">
+                        <div class="form-group">
+                            <label for="first_name">First Name:</label>
+                            <input name="first_name" id="first_name" type="text" class="form-control" value="{{session.user_detail['first_name']}}">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="last_name">Last Name:</label>
+                            <input name="last_name" id="last_name" type="text" class="form-control" value="{{session.user_detail['last_name']}}">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input name="email" id="email" type="text" class="form-control"  value="{{session.user_detail['email']}}">
+                        </div>
+                        <br>
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
 </body>
 </html>
