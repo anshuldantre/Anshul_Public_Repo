@@ -1,4 +1,4 @@
 from flask import Flask
-app = Flask(__name__)
+app= Flask(__name__)
 
-app.secret_key = "Cookies&Orders"
+app.secret_key="MyCookieOrder"
