@@ -26,6 +26,11 @@ CREATE TABLE IF NOT EXISTS `project_db`.`users` (
   `last_name` VARCHAR(100) NULL,
   `email` VARCHAR(100) NULL,
   `password` VARCHAR(200) NULL,
+  `dob` DATE NULL,
+  `gender` CHAR(1) NULL,
+  `music` CHAR(1) NULL,
+  `sports` CHAR(1) NULL,
+  `studies` CHAR(1) NULL,
   `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`))
