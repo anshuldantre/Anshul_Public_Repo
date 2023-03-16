@@ -12,33 +12,14 @@ def index():
 
 @app.route("/register_user", methods=['POST'])
 def register_user():
-    music = 'N'
-    sports = 'N'
-    studies = 'N'
-
-    if request.form.get('music') != None:
-        music = 'Y'
-
-    if request.form.get('sports') != None:
-        sports = 'Y'
-
-    if request.form.get('studies') != None:
-        studies = 'Y'
-
-    print(request.form)
+    # print(request.form)
     if not User.validate_user(request.form):
         return redirect("/")
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
     data = {"first_name": request.form['first_name'],
             "last_name": request.form['last_name'],
             "email": request.form['email'],
-            "password": pw_hash,
-            "last_name": request.form['last_name'],
-            "dob" : request.form['dob'],
-            "gender" : request.form.get('gender'),
-            "music" : music,
-            "sports" : sports,
-            "studies" : studies
+            "password": pw_hash
             }
     logged_in_user_id = User.resigter_user(data)
     session['logged_in_user_id'] = logged_in_user_id
