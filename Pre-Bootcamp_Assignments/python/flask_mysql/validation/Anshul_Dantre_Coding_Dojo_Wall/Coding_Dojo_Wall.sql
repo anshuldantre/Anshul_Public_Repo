@@ -53,6 +53,33 @@ CREATE TABLE IF NOT EXISTS `coding_dojo_wall`.`posts` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `coding_dojo_wall`.`comments`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `coding_dojo_wall`.`comments` ;
+
+CREATE TABLE IF NOT EXISTS `coding_dojo_wall`.`comments` (
+  `users_id` INT NOT NULL,
+  `posts_id` INT NOT NULL,
+  `comment` VARCHAR(45) NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`posts_id`, `users_id`),
+  INDEX `fk_users_has_posts_posts1_idx` (`posts_id` ASC) VISIBLE,
+  INDEX `fk_users_has_posts_users1_idx` (`users_id` ASC) VISIBLE,
+  CONSTRAINT `fk_users_has_posts_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `coding_dojo_wall`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_users_has_posts_posts1`
+    FOREIGN KEY (`posts_id`)
+    REFERENCES `coding_dojo_wall`.`posts` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

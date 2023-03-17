@@ -1,6 +1,7 @@
 from flask_app import app
 from flask import Flask, request, redirect, render_template, session
 from flask_app.models.users_model import User
+from flask_app.models.posts_model import Posts
 from flask_bcrypt import Bcrypt
 from flask import flash
 
@@ -23,7 +24,7 @@ def register_user():
             }
     logged_in_user_id = User.resigter_user(data)
     session['logged_in_user_id'] = logged_in_user_id
-    return redirect("/login")
+    return redirect("/wall")
 
 @app.route("/login_user", methods=['POST'])
 def login_user():
@@ -35,16 +36,16 @@ def login_user():
         flash("Invald Email/Password !","login")
         return redirect("/")
     session['logged_in_user_id'] = logged_in_user.id
-    return redirect("/login")
+    return redirect("/wall")
 
-@app.route("/login")
+@app.route("/wall")
 def login():
     if 'logged_in_user_id' not in session:
         flash("Session timed-out, Please login Again !","login")
         return redirect("/")
     logged_in_user = User.get_user_by_id(session['logged_in_user_id'])
-    print(logged_in_user.first_name)
-    return render_template("/login.html", first_name = logged_in_user.first_name)
+    posts = Posts.get_all_posts()
+    return render_template("wall.html", first_name = logged_in_user.first_name, posts = posts)
 
 @app.route("/logout", methods=['POST'])
 def logout():
