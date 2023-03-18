@@ -1,6 +1,7 @@
 from flask_app import app
 from flask import Flask, request, redirect, render_template, session
 from flask_app.models.users_model import User
+from flask_app.models.recipe_model import Recipe
 from flask_bcrypt import Bcrypt
 from flask import flash
 
@@ -23,7 +24,7 @@ def register_user():
             }
     logged_in_user_id = User.resigter_user(data)
     session['logged_in_user_id'] = logged_in_user_id
-    return redirect("/login")
+    return redirect("/recipes")
 
 @app.route("/login_user", methods=['POST'])
 def login_user():
@@ -35,16 +36,17 @@ def login_user():
         flash("Invald Email/Password !","login")
         return redirect("/")
     session['logged_in_user_id'] = logged_in_user.id
-    return redirect("/login")
+    return redirect("/recipes")
 
-@app.route("/login")
-def login():
+@app.route("/recipes")
+def recipes():
     if 'logged_in_user_id' not in session:
         flash("Session timed-out, Please login Again !","login")
         return redirect("/")
     logged_in_user = User.get_user_by_id(session['logged_in_user_id'])
-    print(logged_in_user.first_name)
-    return render_template("/login.html", first_name = logged_in_user.first_name)
+    # print(logged_in_user.first_name)
+    results = Recipe.get_all_recipes()
+    return render_template("/recipes.html", first_name = logged_in_user.first_name, recipes = Recipe.get_all_recipes())
 
 @app.route("/logout", methods=['POST'])
 def logout():

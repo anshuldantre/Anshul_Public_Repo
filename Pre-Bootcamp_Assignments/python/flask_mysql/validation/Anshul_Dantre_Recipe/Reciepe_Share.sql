@@ -42,6 +42,8 @@ CREATE TABLE IF NOT EXISTS `recipe_share`.`recipe` (
   `name` VARCHAR(100) NULL,
   `description` TEXT(1000) NULL,
   `instructions` TEXT(1000) NULL,
+  `date_cooked` DATETIME NULL,
+  `under_30_min` CHAR(1) NULL,
   `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `user_id` INT NOT NULL,
