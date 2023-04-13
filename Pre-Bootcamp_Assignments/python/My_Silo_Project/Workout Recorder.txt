@@ -1,0 +1,14 @@
+Workout Recorder
+-- Login Page (Stick to traditional as a start, If everything done then switch to Maybe use Google API)
+
+
+-- Add a new excerise tab (Sets, Reprs, wieghts) CRUD
+-- Upload a video of exercise (Optional Feature, save the name in DB and store the video on my local projects tab alongside all static components)
+-- Upload an Image
+
+
+Bench Press 
+1	12	50	Edit / Delete
+2	12	55	Edit / Delete
+3	12	60
+4	12	65
