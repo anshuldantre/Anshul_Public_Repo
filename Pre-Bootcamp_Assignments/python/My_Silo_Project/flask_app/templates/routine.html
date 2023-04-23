@@ -10,18 +10,73 @@
 </head>
 <body>
     <div class="container-fluid">
-        Hello
-        <div class="d-flex justify-content-between mt-3 fs-4">
-            <p>Welcome {{ first_name }}</p>
-            <Div>
-                <a href="/">+ Create</a>
-            </Div>
+        <div class="d-flex justify-content-between mt-3 fs-4 text-warning">
+            <div class="col-1">
+                <img class="mx-auto d-block" src="/static/css/images/Logo.png" alt="image not found">
+            </div>
+            <div class="fs-4 text-warning">
+                <p>Welcome {{ first_name }}, Set daily routines</p>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active">Routine</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/workout">Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/measure">Measure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/explore">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="/more">More</a>
+                    </li>
+                </ul>
+            </div>
             <form action="/logout" method="post">
                 <div>
-                    <input class="btn btn-primary fw-bold" type="submit" value="Logout">
+                    <input class="btn btn-danger fw-bold mt-3" type="submit" value="Logout">
                 </div>
             </form>
-
+        </div>
+        <hr class="text-warning">
+        <br>
+        <a class="btn btn-danger fw-bold mt-3" href="/add_routine">Add Routine</a>
+        <br>
+        <br>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                    <th scope="col">Saturday</th>
+                    <th scope="col">Sunday</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for routine in routines %}
+                    <tr>
+                        <th scope="row">{{ routine.id }}</th>
+                        <td>{{ routine.time }}</td>
+                        <td>{{ routine.monday }}</td>
+                        <td>{{ routine.tuesday }}</td>
+                        <td>{{ routine.wednesday }}</td>
+                        <td>{{ routine.thursday }}</td>
+                        <td>{{ routine.friday }}</td>
+                        <td>{{ routine.saturday }}</td>
+                        <td>{{ routine.sunday }}</td>
+                        <td><a href="/edit_routine/{{routine.id}}">edit</a> | <a href="/delete_routine/{{routine.id}}">delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

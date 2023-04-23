@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Add your Measurements !</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between mt-3 fs-4 text-warning">
+            <div class="col-1">
+                <img class="mx-auto d-block" src="/static/css/images/Logo.png" alt="image not found">
+            </div>
+            <div class="fs-4 text-warning">
+                <p> {{ first_name }}, Edit your Routine !</p>
+            </div>
+            <form action="/logout" method="post">
+                <div>
+                    <input class="btn btn-danger fw-bold mt-3" type="submit" value="Logout">
+                </div>
+            </form>
+        </div>
+        <hr class="text-warning">
+        <div class="col offset-md-1 mt-3 text-warning">
+            <h5 class="text-danger mt-3">Edit Routine Details</h5>
+                {% with messages = get_flashed_messages( category_filter = ["register"] ) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="text-light">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            <form action="/edit_user_routine" method="post" class="form-group">
+                    <div class="col-5">
+                        <label class="form-label" for="first_name">Time (in Military Format 24 Hrs):</label>
+                        <input class="form-control form-control-sm" type="text" name="time" value="{{ routine.time }}">
+                    </div>
+                    <div class="col-5 mt-1">
+                        <label class="form-label" for="last_name">Monday:</label>
+                        <input class="form-control form-control-sm" type="text" name="monday" value="{{ routine.monday }}">
+                    </div>
+                    <div class="col-5 mt-1">
+                        <label class="form-label" for="email">Tuesday:</label>
+                        <input class="form-control form-control-sm" type="text" name="tuesday" value="{{ routine.tuesday }}">
+                    </div>
+                    <div class="col-5 mt-1">
+                        <label class="form-label" for="email">Wednesday:</label>
+                        <input class="form-control form-control-sm" type="text" name="wednesday" value="{{ routine.wednesday }}">
+                    </div>
+                    <div class="col-5 mt-1">
+                        <label class="form-label" for="password">Thursday:</label>
+                        <input class="form-control form-control-sm" type="text" name="thursday" value="{{ routine.thursday }}">
+                    </div>
+                    <div class="col-5 mt-1">
+                        <label class="form-label" for="confirm_password">Friday:</label>
+                        <input class="form-control form-control-sm" type="text" name="friday" value="{{ routine.friday }}">
+                    </div>
+                    <div class="col-5 mt-1">
+                        <label class="form-label" for="password">Saturday:</label>
+                        <input class="form-control form-control-sm" type="text" name="saturday" value="{{ routine.saturday }}">
+                    </div>
+                    <div class="col-5 mt-1">
+                        <label class="form-label" for="confirm_password">Sunday:</label>
+                        <input class="form-control form-control-sm" type="text" name="sunday" value="{{ routine.sunday }}">
+                    </div>
+                    <input type="hidden" name="id" value= "{{ routine.id }}">
+                    <br>
+                    <br>
+                    <div class="col-5 text-center">
+                        <a class="btn btn-danger fw-bold" href="/routine">Back</a>
+                        <input class="btn btn-danger fw-bold" type="submit" value="Update">
+                    </div>
+                    <br>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

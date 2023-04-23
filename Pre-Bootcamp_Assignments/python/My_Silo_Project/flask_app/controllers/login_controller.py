@@ -25,4 +25,21 @@ def register_user():
             }
     logged_in_user_id = User.resigter_user(data)
     session['logged_in_user_id'] = logged_in_user_id
-    return redirect("/routines")
+    return redirect("/routine")
+
+@app.route("/login_user", methods=['POST'])
+def login_user():
+    logged_in_user = User.validate_email(request.form['email'])
+    if not logged_in_user:
+        flash("Invald Email or Password !","login")
+        return redirect("/")
+    if not bcrypt.check_password_hash(logged_in_user.password, request.form['password']):
+        flash("Invald Email or Password !","login")
+        return redirect("/")
+    session['logged_in_user_id'] = logged_in_user.id
+    return redirect("/routine")
+
+@app.route("/logout", methods=['POST'])
+def logout():
+    session.clear()
+    return redirect("/")
