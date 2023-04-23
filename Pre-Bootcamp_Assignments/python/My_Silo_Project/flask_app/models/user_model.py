@@ -20,7 +20,6 @@ class User:
 
     @staticmethod
     def validate_user(user):
-        print("within validate user",user)
         is_valid = True
         if len(user['first_name'].strip()) <= 0 or len(user['last_name'].strip()) <= 0 or len(user['email'].strip()) <= 0 or len(user['password'].strip()) <= 0 or len(user['confirm_password'].strip()) <= 0 :
             flash("All fields are mandatory!","register")

@@ -15,7 +15,7 @@
                 <img class="mx-auto d-block" src="/static/css/images/Logo.png" alt="image not found">
             </div>
             <div class="fs-4 text-warning">
-                <p> {{ first_name }}, Create a new Routine !</p>
+                <p> {{ session.logged_in_username }}, Create a new Routine !</p>
             </div>
             <form action="/logout" method="post">
                 <div>
@@ -26,7 +26,7 @@
         <hr class="text-warning">
         <div class="col offset-md-1 mt-3 text-warning">
             <h5 class="text-danger mt-3">Add Routine Details</h5>
-                {% with messages = get_flashed_messages( category_filter = ["register"] ) %}
+                {% with messages = get_flashed_messages( category_filter = ["routine"] ) %}
                     {% if messages %}
                         {% for message in messages %}
                             <p class="text-light">{{ message }}</p>
@@ -36,35 +36,35 @@
             <form action="/add_user_routine" method="post" class="form-group">
                 <div class="col-5">
                     <label class="form-label" for="first_name">Time (in Military Format 24 Hrs):</label>
-                    <input class="form-control form-control-sm" type="text" name="time" placeholder="07:00 AM">
+                    <input class="form-control form-control-sm" type="text" name="time" placeholder="07:00 AM...............">
                 </div>
                 <div class="col-5 mt-1">
                     <label class="form-label" for="last_name">Monday:</label>
-                    <input class="form-control form-control-sm" type="text" name="monday" placeholder="Trap Bar Deadlift">
+                    <input class="form-control form-control-sm" type="text" name="monday" placeholder="Trap Bar Deadlift...............">
                 </div>
                 <div class="col-5 mt-1">
                     <label class="form-label" for="email">Tuesday:</label>
-                    <input class="form-control form-control-sm" type="text" name="tuesday" placeholder="Sumo Squats">
+                    <input class="form-control form-control-sm" type="text" name="tuesday" placeholder="Sumo Squats...............">
                 </div>
                 <div class="col-5 mt-1">
                     <label class="form-label" for="email">Wednesday:</label>
-                    <input class="form-control form-control-sm" type="text" name="wednesday" placeholder="Arnold Dumbell Press">
+                    <input class="form-control form-control-sm" type="text" name="wednesday" placeholder="Arnold Dumbell Press...............">
                 </div>
                 <div class="col-5 mt-1">
                     <label class="form-label" for="password">Thursday:</label>
-                    <input class="form-control form-control-sm" type="text" name="thursday" placeholder="Inclined Bench Press">
+                    <input class="form-control form-control-sm" type="text" name="thursday" placeholder="Inclined Bench Press...............">
                 </div>
                 <div class="col-5 mt-1">
                     <label class="form-label" for="confirm_password">Friday:</label>
-                    <input class="form-control form-control-sm" type="text" name="friday" placeholder="Rope Pull">
+                    <input class="form-control form-control-sm" type="text" name="friday" placeholder="Rope Pull...............">
                 </div>
                 <div class="col-5 mt-1">
                     <label class="form-label" for="password">Saturday:</label>
-                    <input class="form-control form-control-sm" type="text" name="saturday" placeholder="Dumbell Farmers Carry">
+                    <input class="form-control form-control-sm" type="text" name="saturday" placeholder="Dumbell Farmers Carry...............">
                 </div>
                 <div class="col-5 mt-1">
                     <label class="form-label" for="confirm_password">Sunday:</label>
-                    <input class="form-control form-control-sm" type="text" name="sunday" placeholder="Rest">
+                    <input class="form-control form-control-sm" type="text" name="sunday" placeholder="Rest...............">
                 </div>
                 <br>
                 <br>

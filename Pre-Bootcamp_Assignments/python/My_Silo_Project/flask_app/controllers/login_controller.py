@@ -1,8 +1,7 @@
 from flask_app import app
-from flask import Flask, render_template, request, redirect, session
 from flask_app.models.user_model import User
+from flask import Flask, render_template, request, redirect, session, flash
 from flask_bcrypt import Bcrypt
-from flask import flash
 
 bcrypt = Bcrypt(app)
 
@@ -24,7 +23,9 @@ def register_user():
             "password": pw_hash
             }
     logged_in_user_id = User.resigter_user(data)
+    logged_in_user = User.get_user_by_id(logged_in_user_id)
     session['logged_in_user_id'] = logged_in_user_id
+    session['logged_in_username'] = logged_in_user.first_name
     return redirect("/routine")
 
 @app.route("/login_user", methods=['POST'])
@@ -37,6 +38,7 @@ def login_user():
         flash("Invald Email or Password !","login")
         return redirect("/")
     session['logged_in_user_id'] = logged_in_user.id
+    session['logged_in_username'] = logged_in_user.first_name
     return redirect("/routine")
 
 @app.route("/logout", methods=['POST'])

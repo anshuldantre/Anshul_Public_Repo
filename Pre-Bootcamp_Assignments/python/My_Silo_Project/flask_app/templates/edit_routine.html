@@ -15,7 +15,7 @@
                 <img class="mx-auto d-block" src="/static/css/images/Logo.png" alt="image not found">
             </div>
             <div class="fs-4 text-warning">
-                <p> {{ first_name }}, Edit your Routine !</p>
+                <p> {{ session.logged_in_username }}, Edit your Routine !</p>
             </div>
             <form action="/logout" method="post">
                 <div>
@@ -26,7 +26,7 @@
         <hr class="text-warning">
         <div class="col offset-md-1 mt-3 text-warning">
             <h5 class="text-danger mt-3">Edit Routine Details</h5>
-                {% with messages = get_flashed_messages( category_filter = ["register"] ) %}
+                {% with messages = get_flashed_messages( category_filter = ["routine"] ) %}
                     {% if messages %}
                         {% for message in messages %}
                             <p class="text-light">{{ message }}</p>

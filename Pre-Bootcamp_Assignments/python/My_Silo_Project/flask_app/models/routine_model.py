@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import app
+from flask import flash
 
 class Routine:
     db = "workout_recorder"
@@ -58,3 +59,11 @@ class Routine:
     def del_routine(cls, id):
         query = "DELETE FROM routines WHERE id = %(id)s"
         return connectToMySQL(cls.db).query_db(query, id)
+
+    @staticmethod
+    def validate_routine(routine):
+        is_valid = True
+        if len(routine['time'].strip()) <= 0 or len(routine['monday'].strip()) <= 0 or len(routine['tuesday'].strip()) <= 0 or len(routine['wednesday'].strip()) <= 0 or len(routine['thursday'].strip()) <= 0 or len(routine['friday'].strip()) <= 0 or len(routine['saturday'].strip()) <= 0 or len(routine['sunday'].strip()) <= 0 :
+            flash("All fields are mandatory!","routine")
+            is_valid=False
+        return is_valid
